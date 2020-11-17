@@ -43,7 +43,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
                         passwordEncoder.encode(user.getPassword()),
                         roles);
 
-        //System.out.println(passwordEncoder.encode(user.getPassword()));
+        System.out.println(passwordEncoder.encode(user.getPassword()));
 
         return userDetails;
     }
