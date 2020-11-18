@@ -1,8 +1,8 @@
 package by.devincubator.service.impl;
 
 import by.devincubator.service.StatisticService;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
-@Component
+@Service
 public class StatisticServiceImpl implements StatisticService {
 }

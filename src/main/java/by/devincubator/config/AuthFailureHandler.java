@@ -1,6 +1,6 @@
 package by.devincubator.config;
 
-//import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.authentication.AuthenticationFailureHandler;
@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Map;
-/*
+
 @Component
 public class AuthFailureHandler implements AuthenticationFailureHandler {
     private ObjectMapper objectMapper = new ObjectMapper();
@@ -33,4 +33,3 @@ public class AuthFailureHandler implements AuthenticationFailureHandler {
                 .println(objectMapper.writeValueAsString(data));
     }
 }
-*/
