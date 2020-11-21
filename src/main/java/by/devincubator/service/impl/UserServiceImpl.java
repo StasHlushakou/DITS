@@ -1,15 +1,14 @@
 package by.devincubator.service.impl;
 
 import by.devincubator.entity.User;
-import by.devincubator.repository.TopicRepository;
 import by.devincubator.repository.UserRepository;
 import by.devincubator.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Component
+@Service
 public class UserServiceImpl implements UserService {
 
     @Autowired
