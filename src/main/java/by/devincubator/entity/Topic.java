@@ -36,6 +36,10 @@ public class Topic {
         this.name = name;
     }
 
+    public Set<Test> getTestSet() {
+        return testSet;
+    }
+
     @OneToMany(mappedBy = "topic", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Test> testSet;
 

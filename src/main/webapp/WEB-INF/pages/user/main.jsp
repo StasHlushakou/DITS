@@ -6,15 +6,18 @@
 </head>
 <body>
 
-<a href="<c:url value="/user/choice"/>"> Choice topic and test </a>
+    <br>
+    <a href="<c:url value="/user/choice"/>"> Choice topic and test </a>
 
-<a href="<c:url value="/user/personalStatistic"/>"> Personal statistic </a>
+    <br>
+    <br>
 
+    <a href="<c:url value="/user/personalStatistic"/>"> Personal statistic </a>
 
+    <br>
+    <br>
 
-
-<a href="<c:url value="/logout"/>"> Log out </a>
-<h1>Hello ${info}</h1>
+    <a href="<c:url value="/logout"/>"> Log out </a>
 
 </body>
 </html>

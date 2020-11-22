@@ -6,6 +6,7 @@ import by.devincubator.service.TopicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -18,4 +19,11 @@ public class TopicServiceImpl implements TopicService{
     public List<Topic> getAll() {
         return topicRepository.findAll();
     }
+
+    @Override
+    public Topic getTestByTopicId(int id) {
+        return topicRepository.findByTopicId(id);
+    }
+
+
 }

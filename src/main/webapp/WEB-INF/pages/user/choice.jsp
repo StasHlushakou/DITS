@@ -5,33 +5,68 @@
 <html>
 <head>
     <title>Choise</title>
-    <script src="//ajax.googleapis.com/ajax/lobs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 <body>
 
-    <form action="/user/question">
-        <select id="themes" name="themes">
-            <c:forEach items="${topic}" var="topic">
-                <option>${topic.name}</option>
-            </c:forEach>
 
-        </select>
+<script type="text/javascript">
 
-        <br>
+    function sendTopicName(){
+        let topicLet = {};
+        topicLet.name = null;
+        topicLet.description = null;
+        topicLet.topicId = Number(topic.value);
+        xhrRequestToServer("POST", "<c:url value="/user/choice"/>",topicLet);
+    }
 
-        <select id="test" name="testName">
-                <option>Choose test</option>
-        </select>
+    function xhrRequestToServer(method, url, json) {
+        let xhr = new XMLHttpRequest();
+        xhr.open(method, url);
+        xhr.setRequestHeader('Content-Type', 'application/json;charset=utf-8');
+        xhr.send(JSON.stringify(json));
+        xhr.onload= function() {
+            let testList = JSON.parse(xhr.response);
+            let objSel = document.form.test;
+            objSel.options.length = 0;
+            for (let i = 0; i < testList.length; i++){
+                objSel.options[objSel.options.length] = new Option(testList[i].name, testList[i].testId);
+            }
+        };
+        xhr.onerror= function() {
+            alert(`Some problem with connection to server`);
+        };
 
-        <br>
+    }
+
+
+
+</script>
+
+<form name="form" action="<c:url value="/user/question"/>" method="get">
+
+
+    <select id="topic" name="topic" onchange="sendTopicName()" required>
+        <c:forEach items="${topicNames}" var="topic">
+            <option value="${topic.topicId}">${topic.name}</option>
+        </c:forEach>
+    </select>
+
+    <br>
+    <br>
+
+    <select id="test" name="test" required>
+        <option>Choose test</option>
+    </select>
+
+    <br>
+
+    <input type="submit" class="submit-button" value="Go to test">
+</form>
 
 
 
 
 
-    </form>
-
-    <a href="<c:url value="/user/question"/>"> Take the test </a>
 
 </body>
 </html>

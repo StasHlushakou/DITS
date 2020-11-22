@@ -14,7 +14,8 @@ public class QuestionController {
         return "user/question";
     }
 
-
+    // ?themes=1&testName=1
+    // ?themes=2&testName=2
 
 
 }
