@@ -40,15 +40,7 @@ public class LoginController {
             roles.add(a.getAuthority());
         }
 
-        if (roles.contains("USER")){
-            model.addAttribute("user", true);
-        }
-        if (roles.contains("ADMIN")){
-            model.addAttribute("admin", true);
-        }
-        if (roles.contains("MENTOR")){
-            model.addAttribute("mentor", true);
-        }
+        model.addAttribute("roles", roles);
 
         return "userTypeHandler";
     }

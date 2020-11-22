@@ -8,17 +8,20 @@
 </head>
 <body>
 
-    <sec:authorize access="user">
+
+    <c:if test="${roles.contains(\"USER\")}">
         <p><a class="btn btn-lg btn-success" href="<c:url value="/user/main" />" role="button">Sign in how user</a></p>
-    </sec:authorize>
+    </c:if>
 
-    <sec:authorize access="admin">
+    <c:if test="${roles.contains(\"ADMIN\")}">
         <p><a class="btn btn-lg btn-success" href="<c:url value="/admin" />" role="button">Sign in how admin</a></p>
-    </sec:authorize>
+    </c:if>
 
-    <sec:authorize access="mentor">
+    <c:if test="${roles.contains(\"MENTOR\")}">
         <p><a class="btn btn-lg btn-success" href="<c:url value="/mentor" />" role="button">Sign in how mentor</a></p>
-    </sec:authorize>
+    </c:if>
+
+
 
 </body>
 </html>

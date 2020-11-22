@@ -75,7 +75,7 @@ VALUES ('Java Runnable Entity', false, 1),
 
 insert into role (role)
 values ('USER'),
-       ('RADMIN'),
+       ('ADMIN'),
        ('MENTOR');
 
 insert into user (firstName, lastName, login, password)
