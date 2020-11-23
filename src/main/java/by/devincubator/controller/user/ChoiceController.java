@@ -32,7 +32,12 @@ public class ChoiceController {
     @PostMapping(value = "/choice")
     @ResponseBody
     public List<Test> userChoicePageTest(@RequestBody Topic topic){
-        return new ArrayList(topicService.getTestByTopicId(topic.getTopicId()).getTestSet());
+        ArrayList<Test> list = new ArrayList(topicService.getTestByTopicId(topic.getTopicId()).getTestSet());
+        for (Test t : list){
+            t.setQuestionSet(null);
+            t.setTopic(null);
+        }
+        return list;
     }
 
 
