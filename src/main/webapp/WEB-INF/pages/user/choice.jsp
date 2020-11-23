@@ -16,6 +16,7 @@
         topicLet.name = null;
         topicLet.description = null;
         topicLet.topicId = Number(topic.value);
+        topicLet.testSet = null;
         xhrRequestToServer("POST", "<c:url value="/user/choice"/>",topicLet);
     }
 
