@@ -17,7 +17,6 @@
     <form:form method="post" action="/admin/createUser" modelAttribute="user">
         <table>
             <tr>
-              <%--  <td><form:select path="roleSet"><form:options items="${allRoles}" itemLabel="role"/></form:select></td>--%>
                 <td><form:select path="roleSet" items="${allRoles}" multiple="true" itemValue="roleId" itemLabel="role"/></td>
             </tr>
             <tr>

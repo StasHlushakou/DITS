@@ -13,11 +13,11 @@
 </head>
 <body>
 
-<br> <a href="<c:url value="/goHomeAdmin"/>">Статистика по тесту</a><br>
-<br> <a href="<c:url value="/goHomeAdmin"/>">Статистика по вопросам</a><br>
-<br> <a href="<c:url value="/goHomeAdmin"/>">Статистика пользователей</a><br>
+<br> <a href="<c:url value="/admin/statistic/showTestStatistic"/>">Статистика по тесту</a><br>
+<br> <a href="<c:url value="/admin/statistic/showQuestionStatistic"/>">Статистика по вопросам</a><br>
+<br> <a href="<c:url value="/admin/goHomeAdmin"/>">Статистика пользователей</a><br>
 
-<form action="/goHomeAdmin">
+<form action="/admin/goHomeAdmin">
     <input type="submit" value="Назад">
 </form>
 

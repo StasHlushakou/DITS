@@ -16,10 +16,10 @@ public class HomePage {
         return "admin/homePage";
     }
 
-    @GetMapping(value = "/createTest")
+    /*@GetMapping(value = "/createTest")
     public String createTest(){
         return "admin/createTest";
-    }
+    }*/
 
     /*@GetMapping(value = "/createUser")
     public String createUser(){

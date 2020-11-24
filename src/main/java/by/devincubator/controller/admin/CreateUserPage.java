@@ -6,7 +6,6 @@ import by.devincubator.service.RoleService;
 import by.devincubator.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -15,11 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 @RequestMapping(path = "/admin")
-@Transactional
 public class CreateUserPage {
 
     @Autowired
@@ -36,8 +33,9 @@ public class CreateUserPage {
     }
 
     @PostMapping(value = "/createUser")
-    public ModelAndView addUser(Model model, @ModelAttribute("user") User user) {
+    public String addUser(Model model, @ModelAttribute("user") User user) {
         userService.save(user);
-        return new ModelAndView("admin/createUser", "user", new User());
+        model.addAttribute("success", "Пользователь " + user.getFirstName() + " "+ user.getLastName() + " зарегестрирован");
+        return "admin/registrationSuccess";
     }
 }
