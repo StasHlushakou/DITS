@@ -12,16 +12,27 @@ ${question.description}
 <br>
 
 <form name="form" action="<c:url value="/user/nextQuestion"/>" method="get">
-    <select id="topic" name="topic" onchange="sendTopicName()" required>
-        <c:forEach items="${question.answerSet}" var="answer">
-            <input type="checkbox" value="${answer.answerId}">${answer.description}<Br>
-        </c:forEach>
-    </select>
 
-    <input type="submit" class="submit-button" value="Next question">
+    <c:forEach items="${question.answerSet}" var="answer">
+        <input name="answer" type="checkbox" value="${answer.answerId}">${answer.description}<Br>
 
+    </c:forEach>
+
+
+
+
+
+    <c:if test="${nextQuestion == true}">
+        <input type="submit" class="submit-button" value="Next question">
+    </c:if>
+    <c:if test="${nextQuestion == false}">
+        <input type="submit" class="submit-button" value="Go to result">
+    </form>
+    </c:if>
 
 </form>
+
+
 
 
 </body>
