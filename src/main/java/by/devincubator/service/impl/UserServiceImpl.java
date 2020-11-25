@@ -40,4 +40,10 @@ public class UserServiceImpl implements UserService {
         return userRepository.findById(id);
     }
 
+    @Override
+    public boolean checkUserExistence(User user) {
+        User checkUser = userRepository.findByLogin(user.getLogin());
+        return checkUser != null;
+    }
+
 }

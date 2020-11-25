@@ -9,8 +9,13 @@ import java.util.Optional;
 public interface UserService {
 
     User getByLogin(String login);
+
     List<User> getAll();
+
     void save(User user);
+
     Optional<User> getById(Integer id);
+
+    boolean checkUserExistence(User user);
 
 }

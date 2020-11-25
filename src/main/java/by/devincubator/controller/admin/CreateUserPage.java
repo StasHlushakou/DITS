@@ -20,10 +20,10 @@ import java.util.List;
 public class CreateUserPage {
 
     @Autowired
-    UserService userService;
+    private UserService userService;
 
     @Autowired
-    RoleService roleService;
+    private RoleService roleService;
 
     @GetMapping(value = "/createUser")
     public ModelAndView showForm(Model model) {
@@ -34,8 +34,12 @@ public class CreateUserPage {
 
     @PostMapping(value = "/createUser")
     public String addUser(Model model, @ModelAttribute("user") User user) {
-        userService.save(user);
-        model.addAttribute("success", "Пользователь " + user.getFirstName() + " "+ user.getLastName() + " зарегестрирован");
+        if (userService.checkUserExistence(user)) {
+            model.addAttribute("success", "Пользователь c логином" + user.getLogin() + " уже существует");
+        } else {
+            userService.save(user);
+            model.addAttribute("success", "Пользователь " + user.getFirstName() + " " + user.getLastName() + " зарегестрирован");
+        }
         return "admin/registrationSuccess";
     }
 }

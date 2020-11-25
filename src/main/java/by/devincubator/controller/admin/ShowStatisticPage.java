@@ -2,6 +2,7 @@ package by.devincubator.controller.admin;
 
 import by.devincubator.service.QuestionService;
 import by.devincubator.service.TestService;
+import by.devincubator.service.UserStatisticService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,10 +14,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class ShowStatisticPage {
 
     @Autowired
-    QuestionService questionService;
+    private QuestionService questionService;
 
     @Autowired
-    TestService testService;
+    private TestService testService;
+
+    @Autowired
+    private UserStatisticService userStatisticService;
 
     @GetMapping(value = "statistic/showQuestionStatistic")
     public String showQuestionStatistic(Model model) {
@@ -28,6 +32,12 @@ public class ShowStatisticPage {
     public String showTestStatistic(Model model) {
         model.addAttribute("testStatistic", testService.getTestStatisticList());
         return "admin/statistic/showTestStatistic";
+    }
+
+    @GetMapping(value = "statistic/showUserStatistic")
+    public String showUserStatistic(Model model) {
+        model.addAttribute("userStatistic", userStatisticService.getAllUserStatistic());
+        return "admin/statistic/showUserStatistic";
     }
 
     @GetMapping(value = "goHomeAdmin")
