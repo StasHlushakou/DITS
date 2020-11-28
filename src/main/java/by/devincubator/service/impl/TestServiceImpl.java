@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Service
 public class TestServiceImpl implements TestService {
@@ -18,8 +19,10 @@ public class TestServiceImpl implements TestService {
     @Autowired
     TestRepository testRepository;
 
+
     @Override
-    public Test getQuestionSetByTestId(int testId) {
-        return testRepository.findByTestId(testId);
+    public List<Question> getQuestionsByTestId(int testId) {
+
+        return new ArrayList<>(testRepository.findByTestId(testId).getQuestionSet());
     }
 }

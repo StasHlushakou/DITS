@@ -63,7 +63,7 @@ public class LoginController {
 
     @GetMapping("")
     public String start(Model model){
-        return "index";
+        return "login";
     }
 
 

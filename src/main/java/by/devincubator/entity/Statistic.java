@@ -36,6 +36,22 @@ public class Statistic {
         this.correct = correct;
     }
 
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public Question getQuestion() {
+        return question;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
+    }
+
     @ManyToOne
     @JoinColumn(name = "userId", insertable = false, updatable = false)
     private User user;

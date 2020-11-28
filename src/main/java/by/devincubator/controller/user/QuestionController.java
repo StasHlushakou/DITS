@@ -1,71 +1,70 @@
 package by.devincubator.controller.user;
 
 import by.devincubator.entity.Question;
+import by.devincubator.service.StatisticService;
+import by.devincubator.service.TestService;
+import by.devincubator.service.impl.StatisticServiceImpl;
 import by.devincubator.service.impl.TestServiceImpl;
 import by.devincubator.service.impl.TopicServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 import java.util.List;
+import java.util.Map;
 
 @Controller
 @RequestMapping("/user")
 public class QuestionController {
 
     @Autowired
-    TestServiceImpl testService;
+    TestService testService;
+
+    @Autowired
+    StatisticServiceImpl statisticService;
+
 
 
     private static List<Question> questionList;
+    private static int max;
     private static int counter;
+    private static Map<Question, List<Integer> > statList;
 
 
-    @GetMapping(value = "/question")
-    public String firstQuestion(@RequestParam(value="topic", required=true) int topicId,
-                                 @RequestParam(value="test", required=true) int testId,  Model model){
+    @GetMapping(value = "/startTest")
+    public String startTest(@RequestParam int testId,  Model model){
 
-        questionList =  new ArrayList<Question>(testService.getQuestionSetByTestId(testId).getQuestionSet());
+        statList = new LinkedHashMap<>();
+        questionList = testService.getQuestionsByTestId(testId);
+        max = questionList.size();
         counter = 0;
 
         model.addAttribute("question", questionList.get(counter));
-
-        if(counter == questionList.size() - 2){
-            model.addAttribute("nextQuestion", false);
-        } else {
-            model.addAttribute("nextQuestion", true);
-        }
 
         counter++;
         return "user/question";
     }
 
     @GetMapping(value = "/nextQuestion")
-    public String nextQuestion(@RequestParam(value="answer", required=false) int[] answer,
-                               Model model){
+    public String nextQuestion(@RequestParam(required = false) List<Integer> answersId, Model model){
 
-        if (counter == questionList.size()){
-            questionList = null;
-            counter = 0;
-            return "user/result";
-        }
+        statList.put(questionList.get(counter-1), answersId);
 
-        model.addAttribute("question", questionList.get(counter));
-
-        if(counter == questionList.size() - 1){
-            model.addAttribute("nextQuestion", false);
+        if (counter < max){
+            model.addAttribute("question", questionList.get(counter));
+            counter++;
+            return "user/question";
         } else {
-            model.addAttribute("nextQuestion", true);
+            return new ResultController().resultPage(statList, model);
         }
 
-
-        counter++;
-        return "user/question";
 
     }
 

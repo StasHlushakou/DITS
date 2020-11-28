@@ -9,6 +9,31 @@
 <body>
 
 
+
+<select id="topic" name="topic" onchange="sendTopicName()" required>
+    <c:forEach items="${topicNames}" var="topic">
+        <option value="${topic.topicId}">${topic.name}</option>
+    </c:forEach>
+</select>
+
+<form name="form" action="<c:url value="/user/startTest"/>" method="get">
+
+    <br>
+    <br>
+
+    <select id="testId" name="testId" required>
+        <option>Choose test</option>
+    </select>
+
+    <br>
+
+    <input type="submit" class="submit-button" value="Go to test">
+</form>
+
+
+
+
+
 <script type="text/javascript">
 
     function sendTopicName(){
@@ -27,7 +52,7 @@
         xhr.send(JSON.stringify(json));
         xhr.onload= function() {
             let testList = JSON.parse(xhr.response);
-            let objSel = document.form.test;
+            let objSel = document.form.testId;
             objSel.options.length = 0;
             for (let i = 0; i < testList.length; i++){
                 objSel.options[objSel.options.length] = new Option(testList[i].name, testList[i].testId);
@@ -39,35 +64,8 @@
 
     }
 
-
-
+    sendTopicName();
 </script>
-
-<form name="form" action="<c:url value="/user/question"/>" method="get">
-
-
-    <select id="topic" name="topic" onchange="sendTopicName()" required>
-        <c:forEach items="${topicNames}" var="topic">
-            <option value="${topic.topicId}">${topic.name}</option>
-        </c:forEach>
-    </select>
-
-    <br>
-    <br>
-
-    <select id="test" name="test" required>
-        <option>Choose test</option>
-    </select>
-
-    <br>
-
-    <input type="submit" class="submit-button" value="Go to test">
-</form>
-
-
-
-
-
 
 </body>
 </html>
