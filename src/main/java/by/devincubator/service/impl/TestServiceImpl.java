@@ -21,8 +21,7 @@ public class TestServiceImpl implements TestService {
 
 
     @Override
-    public List<Question> getQuestionsByTestId(int testId) {
-
-        return new ArrayList<>(testRepository.findByTestId(testId).getQuestionSet());
+    public Test findByTestId(int testId) {
+        return testRepository.findByTestId(testId);
     }
 }

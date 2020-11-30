@@ -53,11 +53,11 @@ public class Statistic {
     }
 
     @ManyToOne
-    @JoinColumn(name = "userId", insertable = false, updatable = false)
+    @JoinColumn(name = "userId", insertable = true, updatable = false)
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "questionId", insertable = false, updatable = false)
+    @JoinColumn(name = "questionId", insertable = true, updatable = false)
     private Question question;
 
     @Override

@@ -8,7 +8,6 @@ import org.springframework.data.repository.query.Param;
 
 public interface AnswerRepository extends JpaRepository<Answer, Integer> {
 
-    @Query("select a from Answer a where a.answerId = :answerId")
-    Answer findByAnswerId(@Param("answerId") int answerId);
+    Answer findByAnswerId(int answerId);
 
 }

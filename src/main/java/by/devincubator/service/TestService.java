@@ -8,6 +8,6 @@ import java.util.Set;
 
 public interface TestService {
 
-    List<Question> getQuestionsByTestId(int testId);
+    Test findByTestId(int testId);
 
 }

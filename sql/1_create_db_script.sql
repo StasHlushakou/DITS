@@ -151,7 +151,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `testSystemDb`.`Statistic` (
   `statisticId` INT NOT NULL AUTO_INCREMENT,
-  `date` DATE NOT NULL,
+  `date` DATETIME NOT NULL,
   `correct` TINYINT NOT NULL,
   `userId` INT NOT NULL,
   `questionId` INT NOT NULL,

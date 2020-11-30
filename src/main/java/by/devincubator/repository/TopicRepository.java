@@ -8,7 +8,6 @@ import org.springframework.data.repository.query.Param;
 
 public interface TopicRepository extends JpaRepository<Topic, Integer> {
 
-    @Query("select t from Topic t where t.topicId = :topicId")
-    Topic findByTopicId(@Param("topicId") int topicId);
+    Topic findByTopicId(int topicId);
 
 }

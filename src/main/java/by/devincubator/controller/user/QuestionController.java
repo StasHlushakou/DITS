@@ -1,8 +1,10 @@
 package by.devincubator.controller.user;
 
+import by.devincubator.controller.LoginController;
 import by.devincubator.entity.Question;
 import by.devincubator.service.StatisticService;
 import by.devincubator.service.TestService;
+import by.devincubator.service.UserService;
 import by.devincubator.service.impl.StatisticServiceImpl;
 import by.devincubator.service.impl.TestServiceImpl;
 import by.devincubator.service.impl.TopicServiceImpl;
@@ -15,10 +17,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import java.util.ArrayList;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping("/user")
@@ -28,21 +28,21 @@ public class QuestionController {
     TestService testService;
 
     @Autowired
-    StatisticServiceImpl statisticService;
+    StatisticService statisticService;
 
-
+    @Autowired
+    UserService userService;
 
     private static List<Question> questionList;
     private static int max;
     private static int counter;
-    private static Map<Question, List<Integer> > statList;
+    private static Date firstAnswer;
 
 
     @GetMapping(value = "/startTest")
     public String startTest(@RequestParam int testId,  Model model){
 
-        statList = new LinkedHashMap<>();
-        questionList = testService.getQuestionsByTestId(testId);
+        questionList = new ArrayList<>(testService.findByTestId(testId).getQuestionSet());
         max = questionList.size();
         counter = 0;
 
@@ -53,16 +53,20 @@ public class QuestionController {
     }
 
     @GetMapping(value = "/nextQuestion")
-    public String nextQuestion(@RequestParam(required = false) List<Integer> answersId, Model model){
+    public String nextQuestion(@RequestParam(required = false) int[] answersId, Model model){
 
-        statList.put(questionList.get(counter-1), answersId);
+        if(firstAnswer == null){
+            firstAnswer = new Date();
+        }
+
+        statisticService.addStat(userService.getByLogin(LoginController.getPrincipal()), questionList.get(counter-1), answersId);
 
         if (counter < max){
             model.addAttribute("question", questionList.get(counter));
             counter++;
             return "user/question";
         } else {
-            return new ResultController().resultPage(statList, model);
+            return new ResultController().resultPage(firstAnswer, new Date(), model) ;
         }
 
 

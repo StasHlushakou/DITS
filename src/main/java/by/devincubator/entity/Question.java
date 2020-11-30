@@ -1,8 +1,10 @@
 package by.devincubator.entity;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Objects;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 @Entity
 public class Question {
@@ -93,4 +95,12 @@ public class Question {
                 ", description='" + description +
                 '}';
     }
+
+
+
+    public List<Answer> getCorrectAnswers(){
+        return answerSet.stream().filter((a) -> a.getCorrect() == 1).collect(Collectors.toList());
+    }
+
+
 }
