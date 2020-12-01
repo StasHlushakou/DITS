@@ -26,6 +26,22 @@ public class Literature {
         this.description = description;
     }
 
+    public Link getLink() {
+        return link;
+    }
+
+    public Question getQuestion() {
+        return question;
+    }
+
+    public void setLink(Link link) {
+        this.link = link;
+    }
+
+    public void setQuestion(Question question) {
+        this.question = question;
+    }
+
     @OneToOne(mappedBy = "literature", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Link link;
 

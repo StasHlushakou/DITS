@@ -69,5 +69,10 @@ public class StatisticServiceImpl implements StatisticService {
 
     }
 
+    @Override
+    public List<Statistic> getUserResultStatistic(int userId, Date firstQuestionTime, Date lastQuestionTime) {
+        return statisticRepository.getUserResultStatistic(userId, firstQuestionTime, lastQuestionTime);
+    }
+
 
 }
