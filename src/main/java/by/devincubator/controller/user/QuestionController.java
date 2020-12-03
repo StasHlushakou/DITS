@@ -66,7 +66,9 @@ public class QuestionController {
             counter++;
             return "user/question";
         } else {
-            return resultController.resultPage(firstAnswer, new Date(), model) ;
+            Date firstAnswerDate = firstAnswer;
+            firstAnswer = null;
+            return resultController.resultPage(firstAnswerDate, new Date(), model) ;
         }
 
 
