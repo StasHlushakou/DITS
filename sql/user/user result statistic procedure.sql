@@ -1,5 +1,5 @@
 USE `testsystemdb`;
-DROP procedure IF EXISTS `getUserStatistic`;
+DROP procedure IF EXISTS `getUserResultStatistic`;
 
 DELIMITER $$
 USE `testsystemdb`$$

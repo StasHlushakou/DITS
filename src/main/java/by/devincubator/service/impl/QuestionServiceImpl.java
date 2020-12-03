@@ -19,4 +19,11 @@ public class QuestionServiceImpl implements QuestionService {
     public Question getByQuestionId(int questionId) {
         return questionRepository.findByQuestionId(questionId);
     }
+
+    @Override
+    public List<Question> getUserQuestionList(int userId) {
+        return questionRepository.getUserQuestionList(userId);
+    }
+
+
 }

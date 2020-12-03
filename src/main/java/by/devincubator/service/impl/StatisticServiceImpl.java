@@ -74,5 +74,15 @@ public class StatisticServiceImpl implements StatisticService {
         return statisticRepository.getUserResultStatistic(userId, firstQuestionTime, lastQuestionTime);
     }
 
+    @Override
+    public double getPercentOfRightAnswerUserToQuestion(int userId, int questionId) {
+        return statisticRepository.getPercentOfRightAnswerUserToQuestion(userId, questionId);
+    }
+
+    @Override
+    public int getNumberOfAnswerUserToQuestion(int userId, int questionId) {
+        return statisticRepository.getNumberOfAnswerUserToQuestion(userId, questionId);
+    }
+
 
 }
