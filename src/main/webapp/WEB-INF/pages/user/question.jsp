@@ -10,20 +10,26 @@
 
 <p><img src="<c:url value="/resources/user/human1.png" />"></p>
 
-${question.description}
+<div id="right">
 
-<br>
+    ${question.description}
 
-<form name="form" action="<c:url value="/user/nextQuestion"/>" method="get">
+    <br>
 
-    <c:forEach items="${question.answerSet}" var="answer">
-        <input name="answersId" type="checkbox" value="${answer.answerId}">${answer.description}<Br>
-    </c:forEach>
+    <form name="form" action="<c:url value="/user/nextQuestion"/>" method="get">
+
+        <c:forEach items="${question.answerSet}" var="answer">
+            <input name="answersId" type="checkbox" value="${answer.answerId}">${answer.description}<Br>
+        </c:forEach>
 
 
-    <input type="submit" class="submit-button" value="Следующий">
+        <input type="submit" class="submit-button" value="Следующий">
 
-</form>
+    </form>
+
+</div>
+
+
 
 
 

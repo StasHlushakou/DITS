@@ -12,25 +12,31 @@
 
 <p><img src="<c:url value="/resources/user/human1.png" />"></p>
 
-<select id="topic" name="topic" onchange="sendTopicName()" required>
-    <c:forEach items="${topicNames}" var="topic">
-        <option value="${topic.topicId}">${topic.name}</option>
-    </c:forEach>
-</select>
+<div id="right">
 
-<form name="form" action="<c:url value="/user/startTest"/>" method="get">
 
-    <br>
-    <br>
-
-    <select id="testId" name="testId" required>
-        <option>Choose test</option>
+    <select id="topic" name="topic" onchange="sendTopicName()" required>
+        <c:forEach items="${topicNames}" var="topic">
+            <option value="${topic.topicId}">${topic.name}</option>
+        </c:forEach>
     </select>
 
-    <br>
+    <form name="form" action="<c:url value="/user/startTest"/>" method="get">
 
-    <input type="submit" class="submit-button" value="Пройти тестирование">
-</form>
+        <br>
+        <br>
+
+        <select id="testId" name="testId" required>
+            <option>Choose test</option>
+        </select>
+
+        <br>
+
+        <input type="submit" class="submit-button" value="Пройти тестирование">
+    </form>
+
+</div>
+
 
 
 

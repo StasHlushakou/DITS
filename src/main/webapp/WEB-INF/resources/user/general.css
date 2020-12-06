@@ -5,6 +5,12 @@ img{
 
 }
 
+div#right{
+    position: absolute;
+    right: 15%;
+    top: 30%;
+}
+
 TABLE {
     background: #789cf5; /* Цвет фона нечетных строк */
     border: 1px solid white; /* Рамка вокруг таблицы */
