@@ -7,7 +7,9 @@ import java.util.List;
 public interface TopicService {
 
     List<Topic> getAll();
+
     Topic getTestByTopicId(int id);
 
+    List<String> getAllNames();
 
 }

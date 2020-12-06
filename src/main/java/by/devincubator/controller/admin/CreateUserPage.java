@@ -2,8 +2,8 @@ package by.devincubator.controller.admin;
 
 import by.devincubator.entity.Role;
 import by.devincubator.entity.User;
-import by.devincubator.service.impl.RoleServiceImpl;
-import by.devincubator.service.impl.UserServiceImpl;
+import by.devincubator.service.RoleService;
+import by.devincubator.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,10 +20,10 @@ import java.util.List;
 public class CreateUserPage {
 
     @Autowired
-    UserServiceImpl userService;
+    private UserService userService;
 
     @Autowired
-    RoleServiceImpl roleService;
+    private RoleService roleService;
 
     @GetMapping(value = "/createUser")
     public ModelAndView showForm(Model model) {
@@ -34,9 +34,12 @@ public class CreateUserPage {
 
     @PostMapping(value = "/createUser")
     public String addUser(Model model, @ModelAttribute("user") User user) {
-        System.out.println();
-        System.out.println(user.toString());
-        System.out.println();
-        return "admin/createUser";
+        if (userService.checkUserExistence(user)) {
+            model.addAttribute("success", "Пользователь c логином " + user.getLogin() + " уже существует");
+        } else {
+            userService.save(user);
+            model.addAttribute("success", "Пользователь " + user.getFirstName() + " " + user.getLastName() + " зарегестрирован");
+        }
+        return "admin/registrationSuccess";
     }
 }

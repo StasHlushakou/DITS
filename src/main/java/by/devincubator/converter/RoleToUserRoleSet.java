@@ -1,7 +1,7 @@
 package by.devincubator.converter;
 
-import by.devincubator.repository.RoleRepository;
 import by.devincubator.entity.Role;
+import by.devincubator.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.convert.converter.Converter;
 import org.springframework.stereotype.Component;
@@ -9,11 +9,12 @@ import org.springframework.stereotype.Component;
 @Component
 public class RoleToUserRoleSet implements Converter<Object, Role> {
     @Autowired
-    public RoleRepository repository;
+    public RoleService roleService;
 
     @Override
     public Role convert(Object o) {
         Integer id = Integer.parseInt((String) o);
-        return repository.getOne(id);
+        Role role = roleService.getById(id).get();
+        return role;
     }
 }

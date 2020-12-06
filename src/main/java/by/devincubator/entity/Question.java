@@ -29,6 +29,14 @@ public class Question {
         this.description = description;
     }
 
+    public Test getTest() {
+        return test;
+    }
+
+    public void setTest(Test test) {
+        this.test = test;
+    }
+
     @OneToMany(mappedBy = "question", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Set<Statistic> statisticSet;
 
@@ -39,7 +47,7 @@ public class Question {
     private Set<Literature> literatureSet;
 
     @ManyToOne
-    @JoinColumn(name = "testId", insertable = false, updatable = false)
+    @JoinColumn(name = "testId", updatable = false)
     private Test test;
 
     public Set<Statistic> getStatisticSet() {

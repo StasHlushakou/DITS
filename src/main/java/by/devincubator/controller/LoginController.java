@@ -2,6 +2,7 @@ package by.devincubator.controller;
 
 import by.devincubator.entity.Role;
 import by.devincubator.entity.User;
+import by.devincubator.service.UserService;
 import by.devincubator.service.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -27,7 +28,7 @@ public class LoginController {
 
 
     @Autowired
-    UserServiceImpl userService;
+    UserService userService;
 
 
     @GetMapping("/userTypeHandler")
