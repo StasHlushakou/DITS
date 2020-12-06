@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class TopicServiceImpl implements TopicService{
+public class TopicServiceImpl implements TopicService {
 
     @Autowired
     private TopicRepository topicRepository;
@@ -25,5 +25,11 @@ public class TopicServiceImpl implements TopicService{
         return topicRepository.findByTopicId(id);
     }
 
-
+    @Override
+    public List<String> getAllNames() {
+        List<Topic> topics = topicRepository.findAll();
+        List<String> names = new ArrayList<>();
+        topics.forEach(t -> names.add(t.getName()));
+        return names;
+    }
 }

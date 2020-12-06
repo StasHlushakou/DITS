@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/admin")
@@ -16,18 +17,10 @@ public class HomePage {
         return "admin/homePage";
     }
 
-    @GetMapping(value = "/createTest")
-    public String createTest(){
-        return "admin/createTest";
-    }
-
-    /*@GetMapping(value = "/createUser")
-    public String createUser(){
-        return "admin/createUser";
-    }*/
-
-    @GetMapping(value = "/showStatistic")
-    public String showStatistic(){
-        return "admin/showStatistic";
+    @GetMapping(value = "/registrationSuccess")
+    public String resultPage(@RequestParam String success,
+                             Model model){
+        model.addAttribute("success", success);
+        return "admin/registrationSuccess";
     }
 }
