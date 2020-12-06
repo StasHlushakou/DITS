@@ -27,7 +27,7 @@
 
     <br>
 
-    <input type="submit" class="submit-button" value="Go to test">
+    <input type="submit" class="submit-button" value="Пройти тестирование">
 </form>
 
 

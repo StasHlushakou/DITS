@@ -11,19 +11,19 @@
 
     <tr>
         <td>
-            User name
+            Ф.И.О.
         </td>
         <td>
-            Test name
+            Название теста
         </td>
         <td>
-            Question
+            Формулировка вопроса
         </td>
         <td>
-            Number of answer
+            Пройдено всего
         </td>
         <td>
-            Percent right answer
+            Процент правильно пройденных вопросов
         </td>
 
     </tr>
@@ -47,7 +47,7 @@
 
 
 
-<a href="<c:url value="/user/main"/>"> Main page </a>
+<a href="<c:url value="/user/main"/>"> Назад </a>
 
 </body>
 </html>

@@ -18,7 +18,7 @@ ${question.description}
     </c:forEach>
 
 
-    <input type="submit" class="submit-button" value="Next">
+    <input type="submit" class="submit-button" value="Следующий">
 
 </form>
 

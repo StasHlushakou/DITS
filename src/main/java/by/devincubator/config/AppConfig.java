@@ -43,7 +43,7 @@ public class AppConfig implements WebMvcConfigurer {
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry
                 .addResourceHandler("/resources/**")
-                .addResourceLocations("/resources/");
+                .addResourceLocations("/WEB-INF/resources/");
     }
 
     @Bean

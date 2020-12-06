@@ -10,16 +10,16 @@
 
     <tr>
         <td>
-            Question description
+            Название вопроса
         </td>
         <td>
-            Result
+            Правильно
         </td>
         <td>
-            Reccomend literature
+            Рекомендуемая литература
         </td>
         <td>
-            Reccomend link
+            Рекомендуемые ссылки на литературу
         </td>
 
     </tr>
@@ -56,9 +56,7 @@
 
 
 <br>
-<a href="<c:url value="/user/personalStatistic"/>"> Personal statistic </a>
-<br>
-<a href="<c:url value="/user/main"/>"> Main page </a>
+<a href="<c:url value="/user/main"/>"> Назад </a>
 
 </body>
 </html>

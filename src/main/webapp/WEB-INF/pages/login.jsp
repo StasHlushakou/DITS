@@ -5,6 +5,7 @@
 <html lang="en">
 <head>
     <title>Login page</title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/style.css" />">
 </head>
 
 <body>
@@ -24,13 +25,13 @@
             </div>
             </c:if>
             <div>
-                <input type="text" class="login-field" id="username" name="username" placeholder="Login" value="" required>
+                <input type="text" class="login-field" id="username" name="username" placeholder="Логин" value="" required>
             </div>
             <div>
-                <input type="password" class="password-field" id="password" name="password" placeholder="Password" value="" required>
+                <input type="password" class="password-field" id="password" name="password" placeholder="Пароль" value="" required>
             </div>
             <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
-            <input type="submit" class="submit-button" value="Sign in">
+            <input type="submit" class="submit-button" value="Войти">
         </form>
     </div>
 </div>

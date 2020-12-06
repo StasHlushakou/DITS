@@ -7,17 +7,17 @@
 <body>
 
     <br>
-    <a href="<c:url value="/user/choice"/>"> Choice topic and test </a>
+    <a href="<c:url value="/user/choice"/>"> Выбор темы и теста </a>
 
     <br>
     <br>
 
-    <a href="<c:url value="/user/personalStatistic"/>"> Personal statistic </a>
+    <a href="<c:url value="/user/personalStatistic"/>"> Личная статистика </a>
 
     <br>
     <br>
 
-    <a href="<c:url value="/logout"/>"> Log out </a>
+    <a href="<c:url value="/logout"/>"> Выйти </a>
 
 </body>
 </html>

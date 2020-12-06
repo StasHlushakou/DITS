@@ -43,9 +43,9 @@ public class ResultController {
             String description = statistic.getQuestion().getDescription();
             String isCorrect;
             if(statistic.getCorrect() == 1){
-                isCorrect = "correct";
+                isCorrect = "Правильно";
             } else {
-                isCorrect = "not correct";
+                isCorrect = "Неправильно";
             }
             List<String> literatureList = new ArrayList<>() ;
             List<String> linkList = new ArrayList<>() ;
