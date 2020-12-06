@@ -5,20 +5,23 @@
 <html>
 <head>
     <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/userTupeHandler.css" />">
 </head>
 <body>
 
 
     <c:if test="${roles.contains(\"USER\")}">
-        <p><a class="btn btn-lg btn-success" href="<c:url value="/user/main" />" role="button">Sign in how user</a></p>
+        <a href="<c:url value="/user/main" />" role="button">Войти как пользователь</a>
+        <br>
     </c:if>
 
     <c:if test="${roles.contains(\"ADMIN\")}">
-        <p><a class="btn btn-lg btn-success" href="<c:url value="/admin" />" role="button">Sign in how admin</a></p>
+        <a href="<c:url value="/admin" />" role="button">Войти как админ</a>
+        <br>
     </c:if>
 
     <c:if test="${roles.contains(\"MENTOR\")}">
-        <p><a class="btn btn-lg btn-success" href="<c:url value="/mentor" />" role="button">Sign in how mentor</a></p>
+        <a href="<c:url value="/mentor" />" role="button">Войти как ментор</a>
     </c:if>
 
 
