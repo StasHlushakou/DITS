@@ -74,14 +74,6 @@ public class Question {
         this.literatureSet = literatureSet;
     }
 
-    public Test getTest() {
-        return test;
-    }
-
-    public void setTest(Test test) {
-        this.test = test;
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
