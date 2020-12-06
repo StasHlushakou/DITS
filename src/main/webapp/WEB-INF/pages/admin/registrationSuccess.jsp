@@ -14,11 +14,12 @@
 </head>
 <body>
 <div>
-    ${success}
+    <c:set var="result" scope="page" value="${success}"/>
+    <c:out value="${result}" />
 </div>
 
 <span>
-    <a href="<c:url value='/admin/createUser' />">Вернуться назад</a>
+    <a href="<c:url value='/admin/goHomeAdmin' />">Вернуться на домашнюю страницу</a>
 </span>
 </body>
 </html>

@@ -17,4 +17,7 @@ public interface TestRepository extends JpaRepository<Test, Integer> {
 
     @Query("select t from Test t where t.testId = :testId")
     Optional<Test> findById(@Param("testId") Integer testId);
+
+    @Query("select t from Test t where t.name = :name")
+    Test findByName(@Param("name") String name);
 }

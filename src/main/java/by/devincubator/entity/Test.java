@@ -43,6 +43,14 @@ public class Test {
     @JoinColumn(name = "topicId", insertable = false, updatable = false)
     private Topic topic;
 
+    public Topic getTopic() {
+        return topic;
+    }
+
+    public void setTopic(Topic topic) {
+        this.topic = topic;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

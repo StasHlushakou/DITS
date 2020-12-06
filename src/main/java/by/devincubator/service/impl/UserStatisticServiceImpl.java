@@ -43,7 +43,6 @@ public class UserStatisticServiceImpl implements UserStatisticService {
 
         for (User user : userList) {
             Integer userId = user.getUserId();
-
             List<Test> testList = userStatisticRepository.getTestWhichUserPassed(userId);
 
             if (!testList.isEmpty()) {

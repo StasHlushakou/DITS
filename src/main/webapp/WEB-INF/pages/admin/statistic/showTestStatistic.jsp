@@ -28,7 +28,7 @@
             </tr>
         </c:forEach>
     </table>
-    <form action="/admin/goToShowStatistic">
+    <form action="/admin/goBackToShowStatistic">
         <input type="submit" value="Назад">
     </form>
 </div>
