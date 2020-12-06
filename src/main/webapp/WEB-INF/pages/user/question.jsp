@@ -3,9 +3,12 @@
 <html>
 <head>
     <title>Question</title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/user/question.css" />">
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/user/general.css" />">
 </head>
 <body>
 
+<p><img src="<c:url value="/resources/user/human1.png" />"></p>
 
 ${question.description}
 

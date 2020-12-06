@@ -1,0 +1,29 @@
+img{
+    position: absolute;
+    left: 20%;
+    top: 10%;
+
+}
+
+TABLE {
+    background: #789cf5; /* Цвет фона нечетных строк */
+    border: 1px solid white; /* Рамка вокруг таблицы */
+    border-collapse: collapse; /* Убираем двойные линии между ячейками */
+}
+TD, TH {
+    padding: 3px; /* Поля вокруг содержимого ячейки */
+}
+TD {
+    text-align: left; /* Выравнивание по центру */
+    border-bottom: 1px solid white; /* Линия внизу ячейки */
+}
+TH {
+    background: white; /* Цвет фона */
+    color: white; /* Цвет текста */
+}
+TR.even {
+    background: #cbdaff; /* Цвет фона четных строк */
+}
+.la {
+    text-align: left; /* Выравнивание по левому краю */
+}

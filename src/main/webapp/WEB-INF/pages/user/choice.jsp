@@ -5,10 +5,12 @@
 <html>
 <head>
     <title>Choise</title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/user/choice.css" />">
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/user/general.css" />">
 </head>
 <body>
 
-
+<p><img src="<c:url value="/resources/user/human1.png" />"></p>
 
 <select id="topic" name="topic" onchange="sendTopicName()" required>
     <c:forEach items="${topicNames}" var="topic">

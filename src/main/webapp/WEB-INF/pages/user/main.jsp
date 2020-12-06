@@ -3,21 +3,26 @@
 <html>
 <head>
     <title>User main page</title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/user/main.css" />">
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/user/general.css" />">
 </head>
 <body>
 
-    <br>
-    <a href="<c:url value="/user/choice"/>"> Выбор темы и теста </a>
 
-    <br>
-    <br>
+<p><img src="<c:url value="/resources/user/human1.png" />"></p>
 
-    <a href="<c:url value="/user/personalStatistic"/>"> Личная статистика </a>
+    <div id="right">
+        <a href="<c:url value="/user/choice"/>"> Выбор темы и теста </a>
+        <br>
+        <br>
+        <br>
+        <a href="<c:url value="/user/personalStatistic"/>"> Личная статистика </a>
+        <br>
+        <br>
+        <br>
+        <a href="<c:url value="/logout"/>"> Выйти </a>
+    </div>
 
-    <br>
-    <br>
-
-    <a href="<c:url value="/logout"/>"> Выйти </a>
 
 </body>
 </html>

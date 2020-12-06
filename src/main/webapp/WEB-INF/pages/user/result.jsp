@@ -3,6 +3,8 @@
 <html>
 <head>
     <title>Result</title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/user/result.css" />">
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/user/general.css" />">
 </head>
 <body>
 
