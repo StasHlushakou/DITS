@@ -1,10 +1,7 @@
 package by.devincubator.controller.user;
 
 import by.devincubator.controller.LoginController;
-import by.devincubator.entity.Literature;
-import by.devincubator.entity.Statistic;
-import by.devincubator.entity.User;
-import by.devincubator.entity.UserResultModel;
+import by.devincubator.entity.*;
 import by.devincubator.service.StatisticService;
 import by.devincubator.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -41,12 +38,11 @@ public class ResultController {
         for (Statistic statistic : statList){
 
             String description = statistic.getQuestion().getDescription();
-            String isCorrect;
-            if(statistic.getCorrect() == 1){
-                isCorrect = "Правильно";
-            } else {
-                isCorrect = "Неправильно";
+            StringBuilder isCorrect = new StringBuilder();
+            for (Answer answer : statistic.getQuestion().getCorrectAnswers()){
+                isCorrect.append(answer.getDescription() + "\n");
             }
+
             List<String> literatureList = new ArrayList<>() ;
             List<String> linkList = new ArrayList<>() ;
 
@@ -56,7 +52,7 @@ public class ResultController {
             }
 
 
-            userResultModelList.add(new UserResultModel(description, isCorrect, literatureList, linkList));
+            userResultModelList.add(new UserResultModel(description, isCorrect.toString(), literatureList, linkList));
         }
 
 
