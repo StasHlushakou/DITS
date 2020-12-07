@@ -10,15 +10,16 @@
 <html>
 <head>
     <title>Статистика</title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/admin/general.css" />">
 </head>
-<body>
+<body class="myBody">
 
-<br> <a href="<c:url value="/admin/statistic/showTestStatistic"/>">Статистика по тесту</a><br>
-<br> <a href="<c:url value="/admin/statistic/showQuestionStatistic"/>">Статистика по вопросам</a><br>
-<br> <a href="<c:url value="/admin/statistic/showUserStatistic"/>">Статистика пользователей</a><br>
+<br> <a class="myLink" href="<c:url value="/admin/statistic/showTestStatistic"/>">Статистика по тесту</a><br>
+<br> <a class="myLink" href="<c:url value="/admin/statistic/showQuestionStatistic"/>">Статистика по вопросам</a><br>
+<br> <a class="myLink" href="<c:url value="/admin/statistic/showUserStatistic"/>">Статистика пользователей</a><br>
 
 <form action="/admin/goHomeAdmin">
-    <input type="submit" value="Назад">
+    <input type="submit" value="Назад" class="myButton">
 </form>
 
 </body>

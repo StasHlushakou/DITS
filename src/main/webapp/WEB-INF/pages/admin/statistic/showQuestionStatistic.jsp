@@ -11,10 +11,12 @@
 <html>
 <head>
     <title>QuestionStatistic</title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/admin/table.css" />">
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/admin/general.css" />">
 </head>
-<body>
+<body class="myBody">
 <div>
-    <table border="1">
+    <table class="steelBlueCols">
         <tr>
             <th>Формулировка вопроса</th>
             <th>Пройдено всего</th>
@@ -29,7 +31,7 @@
         </c:forEach>
     </table>
     <form action="/admin/goBackToShowStatistic">
-        <input type="submit" value="Назад">
+        <input type="submit" value="Назад" class="myTableButton">
     </form>
 </div>
 </body>

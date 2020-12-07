@@ -45,11 +45,6 @@ public class ShowStatisticPage {
         return "admin/showStatistic";
     }
 
-    @GetMapping(value = "goHomeAdmin")
-    public String goHomeAdmin() {
-        return "admin/homePage";
-    }
-
     @GetMapping(value = "goBackToShowStatistic")
     public String goBackToShowStatistic() {
         return "admin/showStatistic";

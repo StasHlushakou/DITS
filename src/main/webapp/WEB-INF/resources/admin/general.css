@@ -1,0 +1,61 @@
+
+.myBody{
+    margin: 0;
+    background-image: url("human.png");
+    background-position: 250px;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 600px;
+}
+
+.myButton {
+    box-shadow: 0px 0px 0px 2px #9fb4f2;
+    background: linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+    background-color: #7892c2;
+    border-radius: 10px;
+    border: 1px solid #4e6096;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 19px;
+    padding: 12px 37px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #283966;
+    position: relative;
+    left: 60%;
+    top: 350px;
+}
+
+.myButton:hover {
+    background: linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+    background-color: #476e9e;
+}
+
+.myLink:link,
+.myLink:visited {
+    width: 100%;
+    padding: 1px;
+    text-decoration: none;
+    color: #4f81bd;
+    background-color: #ffffff;
+    border-radius: 4px;
+    font-size: xxx-large;
+    position: relative;
+    left: 60%;
+    top: 300px;
+}
+
+.myLink:hover {
+    border-color: #000000;
+    color: #000000;
+    background-color: #ffffff;
+}
+
+.textRow{
+    font-size: 30px;
+    color: #0c4261;
+    position: relative;
+    left: 60%;
+    top: 350px;
+}

@@ -44,12 +44,12 @@ public class createTestPage {
         String answer;
         if (!testQuestionService.isQuestionsDescriptionPresent(questions)) {
             answer = URLEncoder.encode("Вы не добавили вопросы", "UTF-8");
-            return "/admin/registrationSuccess?success=" + answer;
+            return "/admin/resultPage?result=" + answer;
         } else {
             answer = URLEncoder.encode("Тест создан успешно", "UTF-8");
         }
         testQuestionService.saveTest( test, questions);
 
-        return "/admin/registrationSuccess?success=" + answer;
+        return "/admin/resultPage?result=" + answer;
     }
 }

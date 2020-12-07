@@ -17,10 +17,15 @@ public class HomePage {
         return "admin/homePage";
     }
 
-    @GetMapping(value = "/registrationSuccess")
-    public String resultPage(@RequestParam String success,
+    @GetMapping(value = "/resultPage")
+    public String resultPage(@RequestParam String result,
                              Model model){
-        model.addAttribute("success", success);
-        return "admin/registrationSuccess";
+        model.addAttribute("result", result);
+        return "admin/resultPage";
+    }
+
+    @GetMapping(value = "goHomeAdmin")
+    public String goHomeAdmin() {
+        return "admin/homePage";
     }
 }
