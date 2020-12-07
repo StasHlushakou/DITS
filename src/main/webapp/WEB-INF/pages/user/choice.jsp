@@ -6,7 +6,7 @@
 <head>
     <title>Choise</title>
     <link rel="stylesheet" type="text/css" href="<c:url value="/resources/user/choice.css" />">
-    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/user/general.css" />">
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/user/image.css" />">
 </head>
 <body>
 
@@ -14,26 +14,34 @@
 
 <div id="right">
 
-
-    <select id="topic" name="topic" onchange="sendTopicName()" required>
-        <c:forEach items="${topicNames}" var="topic">
-            <option value="${topic.topicId}">${topic.name}</option>
-        </c:forEach>
-    </select>
-
-    <form name="form" action="<c:url value="/user/startTest"/>" method="get">
-
+    <div id="center">
+        Выберите тему
         <br>
-        <br>
-
-        <select id="testId" name="testId" required>
-            <option>Choose test</option>
+        <select id="topic" name="topic" onchange="sendTopicName()" required>
+            <c:forEach items="${topicNames}" var="topic">
+                <option value="${topic.topicId}">${topic.name}</option>
+            </c:forEach>
         </select>
-
+        <br>
         <br>
 
-        <input type="submit" class="submit-button" value="Пройти тестирование">
-    </form>
+
+        <form name="form" action="<c:url value="/user/startTest"/>" method="get">
+
+            Выберите тест
+            <br>
+            <select id="testId" name="testId" required>
+                <option>Choose test</option>
+            </select>
+
+            <br>
+            <br>
+            <br>
+
+            <input type="submit" class="submit-button" value="Пройти тестирование">
+        </form>
+
+    </div>
 
 </div>
 

@@ -1,16 +1,3 @@
-img{
-    position: absolute;
-    right: 50%;
-    top: 10%;
-
-}
-
-div#right{
-    position: absolute;
-    left: 50%;
-    top: 30%;
-}
-
 TABLE {
     background: #789cf5; /* Цвет фона нечетных строк */
     border: 1px solid white; /* Рамка вокруг таблицы */
@@ -29,7 +16,4 @@ TH {
 }
 TR.even {
     background: #cbdaff; /* Цвет фона четных строк */
-}
-.la {
-    text-align: left; /* Выравнивание по левому краю */
 }
