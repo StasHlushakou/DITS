@@ -17,9 +17,6 @@ import java.net.URLEncoder;
 public class createTestPage {
 
     @Autowired
-    private TopicService topicService;
-
-    @Autowired
     private TestService testService;
 
     @Autowired
