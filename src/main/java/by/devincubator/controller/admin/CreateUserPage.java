@@ -35,11 +35,11 @@ public class CreateUserPage {
     @PostMapping(value = "/createUser")
     public String addUser(Model model, @ModelAttribute("user") User user) {
         if (userService.checkUserExistence(user)) {
-            model.addAttribute("success", "Пользователь c логином " + user.getLogin() + " уже существует");
+            model.addAttribute("result", "Пользователь c логином " + user.getLogin() + " уже существует");
         } else {
             userService.save(user);
-            model.addAttribute("success", "Пользователь " + user.getFirstName() + " " + user.getLastName() + " зарегестрирован");
+            model.addAttribute("result", "Пользователь " + user.getFirstName() + " " + user.getLastName() + " зарегестрирован");
         }
-        return "admin/registrationSuccess";
+        return "admin/resultPage";
     }
 }

@@ -11,13 +11,15 @@
 <html>
 <head>
     <title>Создать тест</title>
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/admin/createTest.css" />">
+    <link rel="stylesheet" type="text/css" href="<c:url value="/resources/admin/general.css" />">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
-<body>
+<body class="myBody">
 <div>
     <form method="post" action="/admin/addNewTest" id="addNewTestForm">
         <p>
-            <label for="test">Выберите тест</label>
+            <label class="select" for="test">Выберите тест</label>
         </p>
         <p>
             <select id="test">
@@ -26,12 +28,10 @@
                 </c:forEach>
             </select>
         </p>
-        <table id="questionTable">
-            <thead>
-            <tr>
-                <th>Вопросы</th>
-            </tr>
-            </thead>
+        <p>
+            <label class="input" for="questionTable">Вопросы</label>
+        </p>
+        <table id="questionTable" class="Questions">
             <tbody>
             <tr>
                 <td>
@@ -46,8 +46,11 @@
             </tr>
             </tbody>
         </table>
-        <button type="button" id="btn1">Добавить вопрос</button>
-        <input type="submit" id="addNewTest" name="addNewTest" value="Добавить тест" data-method="add">
+        <button type="button" id="btn1" class="myCreateTestButton">Добавить вопрос</button>
+        <input type="submit" id="addNewTest" name="addNewTest" value="Добавить вопросы в тест" data-method="add" class="myCreateTestButton">
+    </form>
+    <form action="/admin/goHomeAdmin">
+        <input type="submit" value="Назад" class="myCreateTestButton">
     </form>
 
     <script>

@@ -1,0 +1,75 @@
+table.steelBlueCols {
+    border: 7px solid #6AEEFF;
+    background-color: #133055;
+    width: 400px;
+    text-align: center;
+    border-collapse: collapse;
+    position: relative;
+    left: 60%;
+    top: 100px;
+}
+table.steelBlueCols td, table.steelBlueCols th {
+    border: 1px solid #A7BBD4;
+    padding: 5px 10px;
+    color: #FFFFFF;
+}
+table.steelBlueCols tbody td {
+    font-size: 15px;
+    font-weight: bold;
+    color: #FFFFFF;
+}
+table.steelBlueCols tr:nth-child(even) {
+    background: #69A3C0;
+}
+table.steelBlueCols thead {
+    background: #0A81D7;
+    border-bottom: 10px solid #A7BBD4;
+}
+table.steelBlueCols thead th {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FFFFFF;
+    text-align: center;
+    border-left: 2px solid #A7BBD4;
+}
+table.steelBlueCols thead th:first-child {
+    border-left: none;
+}
+
+table.steelBlueCols tfoot td {
+    font-size: 13px;
+}
+table.steelBlueCols tfoot .links {
+    text-align: right;
+}
+table.steelBlueCols tfoot .links a{
+    display: inline-block;
+    background: #FFFFFF;
+    color: #398AA4;
+    padding: 2px 8px;
+    border-radius: 5px;
+}
+
+.myTableButton {
+    box-shadow: 0px 0px 0px 2px #9fb4f2;
+    background: linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+    background-color: #7892c2;
+    border-radius: 10px;
+    border: 1px solid #4e6096;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 19px;
+    padding: 12px 37px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #283966;
+    position: relative;
+    left: 60%;
+    top: 150px;
+}
+
+.myTableButton:hover {
+    background: linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+    background-color: #476e9e;
+}
