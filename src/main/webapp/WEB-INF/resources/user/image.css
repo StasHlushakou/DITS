@@ -6,14 +6,12 @@ img{
     width: 420px;
     height: 520px;
 }
-
 div#right{
     position: absolute;
     left: 50%;
     width: 420px;
     height: 520px;
 }
-
 div#center{
     margin-top: 153px;
     width: 420px;

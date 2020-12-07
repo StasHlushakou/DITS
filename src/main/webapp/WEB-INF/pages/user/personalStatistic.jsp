@@ -11,42 +11,42 @@
 
 <table>
 
-    <tr>
-        <td>
-            Ф.И.О.
-        </td>
-        <td>
-            Название теста
-        </td>
-        <td>
-            Формулировка вопроса
-        </td>
-        <td>
-            Пройдено всего
-        </td>
-        <td>
-            Процент правильно пройденных вопросов
-        </td>
-
-    </tr>
+    <th>
+        Ф.И.О.
+    </th>
+    <th>
+        Название теста
+    </th>
+    <th>
+        Формулировка вопроса
+    </th>
+    <th>
+        Пройдено всего
+    </th>
+    <th>
+        Процент правильно пройденных вопросов
+    </th>
 
 
 
-    <c:set var="even" scope="page" value="0" />
+    <c:set var="even" scope="page" value="true" />
+
+
 
     <c:forEach items="${userStatList}" var="list">
 
-<%--        <c:if test="${even%2 == 0}">--%>
-<%--            <tr class="even">--%>
-<%--            <%= 2 + 2 %>--%>
-<%--        </c:if>--%>
-<%--        <c:if test="${even%2 != 0}">--%>
-<%--            <tr >--%>
-<%--        </c:if>--%>
+        <c:set var="control" scope="page" value="true" />
 
-        <tr >
-        <c:set var="even" scope="page" value="${even}++" />
+        <c:if test="${even == true}">
+            <tr class="even">
+            <c:set var="even" scope="page" value="false" />
+            <c:set var="control" scope="page" value="false" />
+        </c:if>
 
+        <c:if test="${control==true && even==false}">
+            <tr >
+            <c:set var="even" scope="page" value="true" />
+        </c:if>
 
             <td>${list.userName}</td>
             <td>${list.testName}</td>
@@ -63,7 +63,7 @@
 
 
 
-<a href="<c:url value="/user/main"/>"> Назад </a>
+<a id="back" href="<c:url value="/user/main"/>"> Назад </a>
 
 </body>
 </html>

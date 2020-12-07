@@ -10,25 +10,39 @@
 
 <table>
 
-    <tr>
-        <td>
-            Название вопроса
-        </td>
-        <td>
-            Правильно
-        </td>
-        <td>
-            Рекомендуемая литература
-        </td>
-        <td>
-            Рекомендуемые ссылки на литературу
-        </td>
+    <th>
+        Название вопроса
+    </th>
+    <th>
+        Правильно
+    </th>
+    <th>
+        Рекомендуемая литература
+    </th>
+    <th>
+        Рекомендуемые ссылки на литературу
+    </th>
 
-    </tr>
-
+    <c:set var="even" scope="page" value="true" />
 
     <c:forEach items="${userResultModelList}" var="userResult">
-        <tr>
+
+        <c:set var="control" scope="page" value="true" />
+
+        <c:if test="${even == true}">
+            <tr class="even">
+            <c:set var="even" scope="page" value="false" />
+            <c:set var="control" scope="page" value="false" />
+        </c:if>
+
+        <c:if test="${control==true && even==false}">
+            <tr >
+            <c:set var="even" scope="page" value="true" />
+        </c:if>
+
+
+
+
             <td>${userResult.description}</td>
             <td>${userResult.isCorrect}</td>
 
@@ -58,7 +72,7 @@
 
 
 <br>
-<a href="<c:url value="/user/main"/>"> Назад </a>
+<a id="back" href="<c:url value="/user/main"/>"> Назад </a>
 
 </body>
 </html>

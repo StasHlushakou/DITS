@@ -1,0 +1,11 @@
+body{
+    text-align: center;
+}
+a#back {
+    border: 1px solid #333; /* Рамка */
+    display: inline-block;
+    padding: 5px 15px; /* Поля */
+    text-decoration: none; /* Убираем подчёркивание */
+    background-color: #0c2e8d;
+    color: white; /* Цвет текста */
+}

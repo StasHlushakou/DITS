@@ -1,3 +1,12 @@
+body{
+    text-align: center;
+}
 a {
+    border: 1px solid #333;
+    display: inline-block;
+    padding: 5px 15px;
+    text-decoration: none;
+    background-color: #0c2e8d;
+    color: white;
     font-size: 30pt;
 }
