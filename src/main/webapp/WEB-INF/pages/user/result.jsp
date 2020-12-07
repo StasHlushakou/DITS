@@ -67,9 +67,7 @@
 
 </table>
 
-
-
-
+<p>Правильных ответов : ${percentOfRightAnswer} %</p>
 
 <br>
 <a id="back" href="<c:url value="/user/main"/>"> Назад </a>

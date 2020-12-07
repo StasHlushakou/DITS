@@ -32,6 +32,7 @@ public class ResultController {
         User user = userService.getByLogin(LoginController.getPrincipal());
 
         List<Statistic> statList = statisticService.getUserResultStatistic(user.getUserId(), firstAnswer, lastAnswer);
+        double percentOfRightAnswer = statisticService.getPercentOfRightAnswerUserInTest(user.getUserId(), firstAnswer, lastAnswer);
 
         List<UserResultModel> userResultModelList = new ArrayList<>();
 
@@ -57,7 +58,7 @@ public class ResultController {
 
 
         model.addAttribute("userResultModelList", userResultModelList);
-
+        model.addAttribute("percentOfRightAnswer", percentOfRightAnswer);
 
 
 

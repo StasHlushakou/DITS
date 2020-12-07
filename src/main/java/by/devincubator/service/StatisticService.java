@@ -22,5 +22,6 @@ public interface StatisticService {
 
     int getNumberOfAnswerUserToQuestion(int userId, int questionId);
 
+    double getPercentOfRightAnswerUserInTest(int userId, Date firstQuestionTime, Date lastQuestionTime);
 
 }

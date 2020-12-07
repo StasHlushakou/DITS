@@ -1,5 +1,11 @@
 body{
     text-align: center;
+    font-size: 25px;
+}
+p{
+    text-align: center;
+    font-size: 30px;
+    color: #4b6ebd;
 }
 a#back {
     border: 1px solid #333; /* Рамка */

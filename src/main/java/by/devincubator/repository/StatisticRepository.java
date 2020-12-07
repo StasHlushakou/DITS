@@ -30,6 +30,11 @@ public interface StatisticRepository extends JpaRepository<Statistic, Integer> {
     int getNumberOfAnswerUserToQuestion(@Param("userId") int userId,
                                         @Param("questionId") int questionId);
 
+    @Query(value = "call PercentOfRightAnswerUserInTest(:userId, :firstQuestionTime, :lastQuestionTime);", nativeQuery = true)
+    int getPercentOfRightAnswerUserInTest(@Param("userId") int userId,
+                                          @Param("firstQuestionTime") Date firstQuestionTime,
+                                          @Param("lastQuestionTime") Date lastQuestionTime);
+
 
 
 
