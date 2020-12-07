@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 
+import javax.servlet.http.HttpSession;
 import java.util.*;
 
 
@@ -32,43 +33,46 @@ public class QuestionController {
     @Autowired
     ResultController resultController;
 
-    private static List<Question> questionList;
-    private static int max;
-    private static int counter;
-    private static Date firstAnswer;
+    //private static List<Question> questionList;
+
+
 
 
     @GetMapping(value = "/startTest")
-    public String startTest(@RequestParam int testId,  Model model){
+    public String startTest(@RequestParam int testId,  Model model, HttpSession session){
 
-        questionList = new ArrayList<>(testService.findByTestId(testId).getQuestionSet());
-        max = questionList.size();
-        counter = 0;
 
-        model.addAttribute("question", questionList.get(counter));
+        List<Question> questionList = new ArrayList<>(testService.findByTestId(testId).getQuestionSet());
 
-        counter++;
+        session.setAttribute("questionList", questionList);
+        session.setAttribute("counter", 1);
+        session.setAttribute("max", questionList.size());
+        model.addAttribute("question", questionList.get(0));
+
         return "user/question";
     }
 
     @GetMapping(value = "/nextQuestion")
-    public String nextQuestion(@RequestParam(required = false) int[] answersId, Model model){
+    public String nextQuestion(@RequestParam(required = false) int[] answersId, Model model, HttpSession session){
 
-        if(firstAnswer == null){
-            firstAnswer = new Date();
+        if(session.getAttribute("firstAnswer") == null){
+            session.setAttribute("firstAnswer", new Date());
         }
 
-
+        int counter = (int) session.getAttribute("counter");
+        int max = (int) session.getAttribute("max");
+        List<Question> questionList = (List<Question>) session.getAttribute("questionList");
         statisticService.addStat(userService.getByLogin(LoginController.getPrincipal()), questionList.get(counter-1), answersId);
 
         if (counter < max){
             model.addAttribute("question", questionList.get(counter));
-            counter++;
+            session.setAttribute("counter",counter + 1);
             return "user/question";
         } else {
-            Date firstAnswerDate = firstAnswer;
-            firstAnswer = null;
-            return resultController.resultPage(firstAnswerDate, new Date(), model) ;
+            session.removeAttribute("questionList");
+            session.removeAttribute("counter");
+            session.removeAttribute("max");
+            return resultController.resultPage(model, session) ;
         }
 
 

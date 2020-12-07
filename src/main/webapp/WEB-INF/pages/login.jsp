@@ -12,11 +12,7 @@
 
 
 <form action="<c:url value="/login"/>" method="post" >
-    <c:if test="${param.error != null}">
-        <div class="alert alert-danger">
-            <p>Неверное имя пользователя или пароль</p>
-        </div>
-    </c:if>
+
     <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}">
 
     <div id="login">

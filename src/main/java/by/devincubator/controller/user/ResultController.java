@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -27,7 +28,11 @@ public class ResultController {
 
 
     @GetMapping(value = "/result")
-    public String resultPage(Date firstAnswer, Date lastAnswer, Model model){
+    public String resultPage(Model model, HttpSession session){
+
+        Date firstAnswer = (Date) session.getAttribute("firstAnswer");
+        session.removeAttribute("firstAnswer");
+        Date lastAnswer = new Date();
 
         User user = userService.getByLogin(LoginController.getPrincipal());
 
