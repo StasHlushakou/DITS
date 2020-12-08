@@ -2,7 +2,6 @@ package by.devincubator.controller.admin;
 
 import by.devincubator.service.QuestionService;
 import by.devincubator.service.TestService;
-import by.devincubator.service.TopicService;
 import by.devincubator.service.TestQuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,7 +13,7 @@ import java.net.URLEncoder;
 
 @Controller
 @RequestMapping(path = "/admin")
-public class createTestPage {
+public class CreateTestPage {
 
     @Autowired
     private TestService testService;
