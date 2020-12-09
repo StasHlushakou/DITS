@@ -37,13 +37,13 @@
         </tr>
         <tr>
             <td>
-                <input name="newTestName" type="text" placeholder="Задайте имя теста" id="newTestName" class="myRow" required>
+                <input name="newTestName" type="text" placeholder="Задайте имя теста" id="newTestName" class="myRow" >
             </td>
         </tr>
         <tr>
             <td>
                 <input name="newTestDescription" type="text" placeholder="Задайте описание теста"
-                       id="newTestDescription" class="myRow" required>
+                       id="newTestDescription" class="myRow">
             </td>
         </tr>
         <tr>

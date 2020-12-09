@@ -46,8 +46,14 @@ public class CreateTopicAndTestPage {
 
         Optional<Topic> topicOptional = topicService.getByName(topicName);
         Topic topic = topicOptional.orElseGet(() -> topicService.save(topicName, topicDescription));
-        testService.save(newTestName, newTestDescription, topic);
-        model.addAttribute("result", "Тест '" + newTestName + "' создан");
+        if (newTestName.equals("") & newTestDescription.equals("")) {
+            model.addAttribute("result", "Топик '" + topicName + "' создан");
+        } else if (newTestName.equals("") | newTestDescription.equals("")) {
+            model.addAttribute("result", "Не заполнено поле с именем теста или c описапнием теста");
+        } else {
+            testService.save(newTestName, newTestDescription, topic);
+            model.addAttribute("result", "Тест '" + newTestName + "' создан");
+        }
         return "admin/resultPage";
     }
 }
