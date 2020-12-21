@@ -1,4 +1,4 @@
-CREATE DEFINER=`admin`@`%` PROCEDURE `percentage_of_correct_answers_to_question`(questionId integer)
+CREATE PROCEDURE `percentage_of_correct_answers_to_question`(questionId integer)
 BEGIN
 select SUM(correct)*100/COUNT(statisticId) 
 from statistic

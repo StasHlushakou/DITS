@@ -1,4 +1,4 @@
-CREATE DEFINER=`admin`@`%` PROCEDURE `percentage_of_user_correct_answers_to_test`(userId integer, testId integer)
+CREATE PROCEDURE `percentage_of_user_correct_answers_to_test`(userId integer, testId integer)
 BEGIN
 select ((
 select sum(statistic.correct)

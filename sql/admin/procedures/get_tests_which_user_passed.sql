@@ -1,4 +1,4 @@
-CREATE DEFINER=`admin`@`%` PROCEDURE `get_tests_which_user_passed`(userId integer)
+CREATE PROCEDURE `get_tests_which_user_passed`(userId integer)
 BEGIN
 select distinct test.testId, test.name, test.description, test.topicId 
 from test 

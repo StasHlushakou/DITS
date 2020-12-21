@@ -1,4 +1,4 @@
-CREATE DEFINER=`admin`@`%` PROCEDURE `how_many_times_question_was_answered`(questionId integer)
+CREATE PROCEDURE `how_many_times_question_was_answered`(questionId integer)
 BEGIN
 Select count(statisticId) 
 from statistic

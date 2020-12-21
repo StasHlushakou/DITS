@@ -1,4 +1,4 @@
-CREATE DEFINER=`admin`@`%` PROCEDURE `how_many_times_user_passed_test`(userId Integer, testId Integer)
+CREATE PROCEDURE `how_many_times_user_passed_test`(userId Integer, testId Integer)
 BEGIN
 select ((
 select count(statistic.statisticId)

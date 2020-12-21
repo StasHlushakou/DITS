@@ -1,4 +1,4 @@
-CREATE DEFINER=`admin`@`%` PROCEDURE `how_many_times_test_passed`(testId integer)
+CREATE  PROCEDURE `how_many_times_test_passed`(testId integer)
 BEGIN
 Select max((
 Select count(statisticId) 
